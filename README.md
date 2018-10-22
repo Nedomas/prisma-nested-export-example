@@ -8,29 +8,29 @@ with this setup.
 1. Open http://localhost:4469
 2. Create record:
 ```gql
-	mutation {
-		createUser(
-			data:{
-				name: "john",
-				posts: {
-					create: [
-						{
-							name: "post1",
-							links: {
-								create: [
-									{
-										url: "link1"
-									}
-								]
-							}
-						}
-					]
-				}
-			}
-		) {
-			id
-		}
-	}
+mutation {
+  createUser(
+    data:{
+      name: "john",
+      posts: {
+        create: [
+          {
+            name: "post1",
+            links: {
+              create: [
+                {
+                  url: "link1"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ) {
+    id
+  }
+}
 ```
 
 ## Check that nested relations are there
@@ -38,17 +38,17 @@ with this setup.
 1. Open http://localhost:4469
 2. Query:
 ```gql
-	{
-		users {
-			id
-			posts {
-				id
-				links {
-					id
-				}
-			}
-		}
-	}
+{
+  users {
+    id
+    posts {
+      id
+      links {
+        id
+      }
+    }
+  }
+}
 ```
 
 ## Export
